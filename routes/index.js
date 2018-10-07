@@ -17,4 +17,8 @@ router.get('/settings', function(req, res, next) {
   res.render('index', { title: 'SnowPlow - Settings', page: 'settings' });
 });
 
+router.get('/profile', function(req, res, next) {
+  res.render('index', { title: 'SnowPlow - Profile', page: 'profile' });
+});
+
 module.exports = router;

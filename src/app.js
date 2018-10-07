@@ -10,6 +10,7 @@ import Home from './pages/home';
 import Jobs from './pages/jobs';
 import NotFound from './pages/error';
 import Users from './pages/users';
+import Profile from './pages/profile';
 
 class App extends Component {
     renderPage() {
@@ -17,6 +18,7 @@ class App extends Component {
             case 'index': return <Home />;
             case 'jobs': return <Jobs />;
             case 'users': return <Users />;
+            case 'profile': return <Profile />;
             default: return <NotFound />
         }        
     }
