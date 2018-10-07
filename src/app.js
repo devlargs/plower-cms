@@ -9,12 +9,14 @@ import Sidebar from './components/sidebar';
 import Home from './pages/home';
 import Jobs from './pages/jobs';
 import NotFound from './pages/error';
+import Users from './pages/users';
 
 class App extends Component {
     renderPage() {
         switch (page) {
             case 'index': return <Home />;
             case 'jobs': return <Jobs />;
+            case 'users': return <Users />;
             default: return <NotFound />
         }        
     }

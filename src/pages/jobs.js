@@ -51,7 +51,6 @@ const data = [
     }
 ];
 
-
 export default class Error extends Component {
     renderTable() {
         return (
@@ -80,7 +79,7 @@ export default class Error extends Component {
                             accessor: "status",
                             Cell: ({ original }) => {
                                 let className;
-                                switch(original.status) {
+                                switch (original.status) {
                                     case 'PENDING': className = 'warning'; break;
                                     case 'ACCEPTED': className = 'success'; break;
                                     case 'REJECTED': className = 'danger'; break;
@@ -108,7 +107,7 @@ export default class Error extends Component {
                             Cell: row => (
                                 <div>
                                     <button class="btn btn-primary btn-xs" onClick={() => handleEdit(row.original)}>Edit</button>
-                                    <button class="btn btn-danger btn-xs" style={{marginLeft: 10}} onClick={() => handleDelete(row.original)}>Delete</button>
+                                    <button class="btn btn-danger btn-xs" style={{ marginLeft: 10 }} onClick={() => handleDelete(row.original)}>Delete</button>
                                 </div>
                             )
                         },
@@ -135,24 +134,6 @@ export default class Error extends Component {
                 </section>
 
                 <section class="content">
-
-                    {/* <div class="box">
-                        <div class="box-header with-border">
-                            <div class="box-tools pull-right">
-                                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                                    title="Collapse">
-                                    <i class="fa fa-minus"></i></button>
-                                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                                    <i class="fa fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            Start creating your amazing application!
-                      </div>
-                        <div class="box-footer">
-                            Footer
-                      </div>
-                    </div> */}
                     {this.renderTable()}
                 </section>
             </div>
