@@ -8,6 +8,7 @@ const data = [
         username: "kaolak",
         socialMediaType: "FB",
         firstName: "Sherwin",
+        verified: true,
         lastName: "Mercurio",
         active: true,
         photoUrl: "https://scontent.fmnl3-1.fna.fbcdn.net/v/t1.0-9/18402906_10155512898032638_8544358572656959556_n.jpg?_nc_cat=108&_nc_eui2=AeHOestF0n4dP1uXoxXqaB74aPMM-5EeQzZUdpmXZSPhq7_xR8ycOS1NGgRSYiviqQMg7H62W85qkZQ0zsJ9bndR1YdM1IaUMdsQ_o--rOnvX9PLYDmhKmoG9DHlVTgSMjI&oh=0884ae29a9e3a5f72eb7fae671b73c6a&oe=5C5F61BE",
@@ -18,6 +19,7 @@ const data = [
         username: "rosx.less",
         socialMediaType: "FB",
         firstName: "Bret",
+        verified: false,
         lastName: "Pura",
         active: true,
         photoUrl: "https://media.licdn.com/dms/image/C4D03AQGwYyVWX0z1GA/profile-displayphoto-shrink_200_200/0?e=1539216000&v=beta&t=IU6HNQ2nLK9DiqpvCpi9yTRzN7IAlzKxa6MvnxV-8lU",
@@ -29,6 +31,7 @@ const data = [
         socialMediaType: "Google",
         firstName: "Ralph",
         lastName: "Largo",
+        verified: true,
         active: true,
         photoUrl: "https://m.media-amazon.com/images/M/MV5BN2JmODBiMDAtNjYyZS00YjE4LWIzYmMtMDYwY2JhZTYyNzljL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_.jpg",
     }
@@ -56,6 +59,14 @@ export default class Error extends Component {
                             accessor: "roleId"
                         },
                         {
+                            Header: "First Name",
+                            accessor: "firstName"
+                        },
+                        {
+                            Header: "Last Name",
+                            accessor: "lastName"
+                        },
+                        {
                             Header: "Email Address",
                             accessor: "email"
                         },
@@ -64,16 +75,20 @@ export default class Error extends Component {
                             accessor: "username"
                         },
                         {
+                            Header: 'Verified',
+                            width: 65,
+                            Cell: ({ original }) => {
+                                const icon = `fa fa-${(original.verified) ? 'check' : 'times'}`;
+                                return (
+                                    <div style={{margin: "auto"}}>
+                                        <center><span class={icon}></span></center>
+                                    </div>
+                                );
+                            },
+                        },
+                        {
                             Header: "Social Media Type",
                             accessor: "socialMediaType"
-                        },
-                        {
-                            Header: "First Name",
-                            accessor: "firstName"
-                        },
-                        {
-                            Header: "Last Name",
-                            accessor: "lastName"
                         },
                         {
                             Header: '',
